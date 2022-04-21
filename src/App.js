@@ -1,23 +1,43 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import MovieList from './component/MovieList'
+import SearchBar from './component/SearchBar'
+
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+
 
 function App() {
+
+  const [movies, setMovies] = useState([]);
+  const [searchValue, setSearchValue] = useState();
+
+  //Get movies from the api
+  const getMoives = async (search) => {
+
+    const response = await fetch(`http://www.omdbapi.com/?s=${searchValue}&apikey=b44fa608`);
+    const jsonData = await response.json();
+
+    console.log(jsonData,'16')
+
+    if(jsonData.Search){
+      console.log("hello")
+      setMovies(jsonData.Search);
+    }
+
+  }
+
+  useEffect(() => {
+    getMoives();
+  }, [searchValue])
+
+  console.log(movies,'34')
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SearchBar searchValue={searchValue} setSearchData={setSearchValue}/>
+      <MovieList data={movies}/>
     </div>
   );
 }
