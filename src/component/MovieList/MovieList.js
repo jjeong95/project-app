@@ -1,20 +1,27 @@
 import MovieCard from '../MovieCard/MovieCard'
 import { Grid } from '@mui/material'
+import PropTypes from 'prop-types';
 
-export default function movieList (props) {
+/**
+ * Component for displaying list of movies
+ */
+export default function MovieList (props) {
 
-    const movies = props.data
+    const movies = props.movies
 
     return(
         <Grid container className="movie-list-container">
             {
                 movies.map((data,index) => {
                     return(
-                        <MovieCard key={index} data={data}/>
+                        <MovieCard key={index} movieData={data}/>
                     )
                 })
             }
         </Grid>
     )
+}
 
+MovieList.propTypes = {
+    movies: PropTypes.array,
 }

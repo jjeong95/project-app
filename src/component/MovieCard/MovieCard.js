@@ -1,11 +1,14 @@
 import { Grid } from "@mui/material"
 import { Button } from "@mui/material";
-
+import PropTypes from 'prop-types';
 import './MovieCard.css'
 
+/**
+ * Component for displaying movie card
+ */
 export default function MovieCard(data){
 
-    const movieData = data.data;
+    const movieData = data.movieData;
     
     return (
         <Grid item xs={12} sm ={6} md={4} lg={2} className="movie-card-container">
@@ -29,4 +32,12 @@ export default function MovieCard(data){
             </Grid>
         </Grid>
     )
+}
+
+MovieCard.propTypes = {
+    movieData: PropTypes.shape({
+        Poster: PropTypes.string,
+        Title: PropTypes.string,
+        Year: PropTypes.string,
+    })
 }

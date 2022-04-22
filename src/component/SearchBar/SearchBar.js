@@ -1,7 +1,10 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import './SearchBar.css'
+import PropTypes from 'prop-types';
 
+/**
+ * Component for movie search bar
+ */
 export default function SearchBar(props) {
 
   return (
@@ -15,4 +18,8 @@ export default function SearchBar(props) {
         />
     </div>
   );
+}
+
+SearchBar.propTypes = {
+  setSearchData: PropTypes.func,
 }
