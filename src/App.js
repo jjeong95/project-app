@@ -5,6 +5,9 @@ import SearchBar from './component/SearchBar/SearchBar'
 
 import { Grid } from '@mui/material';
 
+/**
+ * Movie Project-App for Ensemble
+ */
 function App() {
 
   //states
