@@ -2,7 +2,7 @@ import { Grid } from "@mui/material"
 import { Button } from "@mui/material";
 import PropTypes from 'prop-types';
 import './MovieCard.css'
-
+import imageNotAvaialble from '../../assets/images/Image_not_available.png'
 /**
  * Component for displaying movie card
  */
@@ -13,7 +13,7 @@ export default function MovieCard(data){
     return (
         <Grid item xs={12} sm ={6} md={4} lg={2} className="movie-card-container">
             <Grid item xs={12}>
-                <img src={movieData.Poster} className="movie-img"/>
+                <img src={movieData.Poster != "N/A" ? movieData.Poster : imageNotAvaialble} className="movie-img"/>
             </Grid>
             <Grid container className="text-container">
                 <Grid item xs={12}>

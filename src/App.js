@@ -6,13 +6,13 @@ import SearchBar from './component/SearchBar/SearchBar'
 import { Grid } from '@mui/material';
 
 /**
- * Movie Project-App for Ensemble
+ * OMDB Movie Project-App for Ensemble
  */
 function App() {
 
   //states
   const [movies, setMovies] = useState([]);
-  const [searchValue, setSearchValue] = useState();
+  const [searchValue, setSearchValue] = useState("Star Wars");
 
   //Get movies from the api based on search value
   //To prevent too many api call on each keystroke, we can debounce the api call by making the api call after a key stroke in the search bar has stopped for certain amount of time.
