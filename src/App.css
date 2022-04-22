@@ -2,6 +2,23 @@
   text-align: center;
 }
 
+.search-bar-container{
+  margin-top:'12px';
+  margin-bottom: '12px';
+}
+
+.movie-list-container{
+  margin-top:'60px';
+}
+
+#movie-app-text{
+  margin-left:8px;
+}
+
+#App-container{
+  margin-top:8px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
